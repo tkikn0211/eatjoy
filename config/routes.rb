@@ -4,10 +4,11 @@ Rails.application.routes.draw do
   root to: "homes#top"
   get "/about" => "home#about"
   resources :users, omly: [:show, :edit]
-  resources :recruitments, only: [:new, :index, :show, :edit]
+  resources :recruitments, only: [:new, :index, :show, :edit, :create]
   resources :genres, only: [:index]
   resources :profiles, only: [:show]
   resources :notifications, only: [:index]
+  resources :messages, only:[:index, :show, :create]
 
   
   

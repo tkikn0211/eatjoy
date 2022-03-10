@@ -1,29 +1,79 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class='container'>
+  <div class='row mt-3'>
+    <div class='col-md-3 m-4 text-center'>
+      <h4>新規会員登録</h4>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+  <div class='row'>
+    <div class='col-md-12 mx-auto mt-3'>
+      <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+        <!--名前-->
+        <div class="row form-group">
+          <%= f.label "名前", class: "col-form-label col-md-3" %>
+          <%= f.label :last_name, "(姓)", class: "col-form-label col-sm-1" %>
+          <%= f.text_field :last_name, autofocus: true, class: "form-control col-sm-3" %>
+          <%= f.label :first_name, "(名)", class: "col-form-label col-sm-1" %>
+          <%= f.text_field :first_name, class: "form-control col-sm-3" %>
+        </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+        <!--フリガナ-->
+        <div class="row form-group">
+          <%= f.label "フリガナ", class: "col-form-label col-md-3" %>
+          <%= f.label :last_name_kana, "(セイ)", class: "col-form-label col-sm-1" %>
+          <%= f.text_field :last_name_kana, class: "form-control col-sm-3" %>
+          <%= f.label :first_name_kana, "(メイ)", class: "col-form-labwl col-sm-1" %>
+          <%= f.text_field :first_name_kana, class: "form-control col-sm-3" %>
+        </div>
 
-<%= render "devise/shared/links" %>
+        <!--アカウントメイ-->
+        <div class="row form-group">
+          <%= f.label :account_name, "アカウント名", class: "col-form-label col-md-4" %>
+          <%= f.text_field :account_name, class: "form-control col-sm-3" %>
+        </div>
+
+        <!--メールアドレス-->
+        <div class="row form-group">
+          <%= f.label :email, "メールアドレス", class: "col-form-label col-md-4" %>
+          <%= f.email_field :email, :placeholder => "sample@example.com", class: "form-control col-sm-3" %>
+        </div>
+
+        <!--都道府県-->
+        <div class="row form-group">
+          <%= f.label :address, "住所（都道府県のみ）", class: "col-form-label col-md-4" %>
+          <%= f.text_field :adress, :placeholder => "東京都", class: "form-control col-sm-3" %>
+        </div>
+
+        <!--パスワード-->
+        <div class="row form-group">
+          <%= f.label :password, "パスワード(6文字以上)", class: "col-form-label col-md-4" %>
+          <%= f.password_field :password, autocomplete: "off", class: "password form-control col-md-3" %>
+        </div>
+
+        <!--パスワード（確認）-->
+        <div class="row form-group">
+          <%= f.label :password_confirmation, "パスワード(確認用)", class: "col-form-label col-md-4" %>
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: "password_confirm form-control col-md-3" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "新規登録", class: 'btn btn-sm btn-success col-md-3 offset-md-4 mt-3' %>
+        </div>
+      <% end %>
+
+       <div class="row mt-5">
+        <div class="col-md-2 ml-4 mt-2 mb-2">
+          <h5>既に登録済みの方</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 mx-auto my-2">
+          <%= link_to "こちら", new_user_session_path %>からログインしてください。
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
