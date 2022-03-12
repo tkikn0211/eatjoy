@@ -1,2 +1,49 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<div class='container'>
+  <div class='row mt-3'>
+    <div class='col-md-3 m-4 text-center'>
+      <h4><%= @user.account_name %></h4>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-9"></div>
+      <div class="col-3">
+        <%= link_to"メッセージを送る", messages_path,class: "btn btn-success" %>
+      </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-4">
+      <%= attachment_image_tag @user, :user_image, size:'250x200' %>
+    </div>
+    <div class="col-md-7">
+      <table class="table">
+        <tr>
+          <td>名前</td>
+          <td><%= @user.last_name %><%= @user.first_name %></td>
+        </tr>
+
+        <tr>
+          <td>フリガナ</td>
+          <td><%= @user.last_name_kana %><%= @user.first_name_kana %></td>
+        </tr>
+
+        <tr>
+          <td>住所</td>
+          <td><%= @user.address %></td>
+        </tr>
+
+        <tr>
+          <td>趣味</td>
+          <td><%= @user.hobby %></td>
+        </tr>
+
+        <tr>
+          <td>自己紹介</td>
+          <td><%= @user.body %></td>
+        </tr>
+      </table>
+      
+    </div>
+  </div>
+</div>

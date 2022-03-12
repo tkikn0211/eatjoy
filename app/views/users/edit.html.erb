@@ -7,12 +7,12 @@
 
    <div class='row'>
     <div class='col-md-12 mx-auto mt-3'>
-      <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+      <%= form_with model: @user, url: user_path, local: true do |f| %>
 
         <!--画像-->
         <div class="row form-group">
           <%= f.label "画像", class: "col-form-label col-md-3" %>
-          <%= f.file_field :user_image_id, placeholder: "プロフィール画像", accept: "image/*", class: "col-sm-5" %>
+          <%= f.attachment_field :user_image, class: "col-sm-7" %>
         </div>
 
         <!--名前-->
@@ -48,7 +48,7 @@
         <!--都道府県-->
         <div class="row form-group">
           <%= f.label :address, "住所（都道府県のみ）", class: "col-form-label col-md-4" %>
-          <%= f.text_field :adress, :placeholder => "東京都", class: "form-control col-sm-3" %>
+          <%= f.text_field :address, :placeholder => "東京都", class: "form-control col-sm-3" %>
         </div>
 
         <!--趣味-->
@@ -63,15 +63,13 @@
           <%= f.text_area :body, :size => "20x5", class: "form-control col-sm-7" %>
         </div>
 
-        <div  class="row mt-4" style="display: flex">
+        <div class="row mt-4" style="display: flex">
           <div class="col-md-8"></div>
           <div class="col-md-2"><%= f.submit "変更を保存", class: "btn btn-success" %></div>
           <div class="col-md-2"><%= link_to "退会する", unsubscribe_users_path, class: "btn btn-danger" %></div>
         </div>
 
       <% end %>
-
-
 
     </div>
   </div>

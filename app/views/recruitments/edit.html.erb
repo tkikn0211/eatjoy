@@ -1,2 +1,52 @@
-<h1>Recruitments#edit</h1>
-<p>Find me in app/views/recruitments/edit.html.erb</p>
+<div class='container'>
+  <div class='row mt-3'>
+    <div class='col-md-3 m-4 text-center'>
+      <h4>投稿編集</h4>
+    </div>
+  </div>
+
+  <%= form_with model: @recruitment, url: recruitments_path, local: true do |f| %>
+    <div class='row'>
+      <div class='col-md-12 mx-auto mt-3'>
+
+　　　　 <!--画像-->
+        <div class="row form-group">
+          <%= f.label "画像", class: "col-form-label col-md-4 text-center" %>
+          <%= f.attachment_field :store_image, class: "col-sm-6" %>
+        </div>
+
+        <!--タイトル-->
+        <div class="row form-group">
+          <%= f.label "タイトル", class: "col-form-label col-md-4 text-center" %>
+          <%= f.text_field :title, class: "form-control col-sm-6" %>
+        </div>
+
+        <!--店舗名-->
+        <div class="row form-group">
+          <%= f.label "店舗名", class: "col-form-label col-md-4 text-center" %>
+          <%= f.text_field :store_name, class: "form-control col-sm-6" %>
+        </div>
+
+        <!--店舗住所-->
+        <div class="row form-group">
+          <%= f.label "店舗住所", class: "col-form-label col-md-4 text-center" %>
+          <%= f.text_field :account_name, class: "form-control col-sm-6" %>
+        </div>
+
+        <!--コメント-->
+        <div class="row form-group">
+          <%= f.label "コメント", class: "col-form-label col-md-4 text-center" %>
+          <%= f.text_area :body, :size => "20x5", class: "form-control col-sm-6" %>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="row mt-4" style="display: flex">
+          <div class="col-md-8"></div>
+          <div class="col-md-2"><%= link_to "戻る", recruitment_path(recruitment_id), class: "btn btn-primary" %></div>
+          <div class="col-md-2"><%= f.submit "変更を保存", class: "btn btn-success" %></div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

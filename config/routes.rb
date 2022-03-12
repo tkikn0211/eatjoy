@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       patch 'withdraw'
     end
   end
-  resources :recruitments, only: [:new, :index, :show, :edit, :create]
+  resources :recruitments, only: [:new, :index, :show, :edit, :create, :update]
   resources :genres, only: [:index]
   resources :profiles, only: [:show]
   resources :notifications, only: [:index]

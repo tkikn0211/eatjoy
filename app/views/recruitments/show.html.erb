@@ -1,2 +1,37 @@
-<h1>Recruitments#show</h1>
-<p>Find me in app/views/recruitments/show.html.erb</p>
+<div class='container'>
+  <div class='row mt-3'>
+    <div class='col-md-3 m-4 text-center'>
+      <h4>投稿</h4>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-4">
+      <%= attachment_image_tag @recruitment, :user_image, size:'250x200' %>
+    </div>
+    <div class="col-md-7">
+      <table class="table">
+        <tr>
+          <td>タイトル</td>
+          <td><%= @recruitment.title%></td>
+        </tr>
+
+        <tr>
+          <td>店舗名</td>
+          <td><%= @recruitment.store_name %>></td>
+        </tr>
+
+        <tr>
+          <td>店舗住所</td>
+          <td><%= @recruitmentr.store_address %></td>
+        </tr>
+
+        <tr>
+          <td>コメント</td>
+          <td><%= @recruitment.body %></td>
+        </tr>
+      </table>
+      
+    </div>
+  </div>
+</div>
