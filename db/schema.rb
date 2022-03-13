@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_08_052607) do
+ActiveRecord::Schema.define(version: 2022_03_13_063423) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2022_03_08_052607) do
   create_table "recruitments", force: :cascade do |t|
     t.integer "user_id"
     t.integer "genre_id"
-    t.integer "title"
+    t.string "title"
     t.string "store_name"
     t.string "store_address"
     t.string "store_image_id"

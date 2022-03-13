@@ -5,7 +5,7 @@
     </div>
   </div>
 
-  <%= form_with model: @recruitment, url: recruitments_path, local: true do |f| %>
+  <%= form_with model: @recruitment, url: recruitment_path, local: true do |f| %>
     <div class='row'>
       <div class='col-md-12 mx-auto mt-3'>
 
@@ -30,7 +30,7 @@
         <!--店舗住所-->
         <div class="row form-group">
           <%= f.label "店舗住所", class: "col-form-label col-md-4 text-center" %>
-          <%= f.text_field :account_name, class: "form-control col-sm-6" %>
+          <%= f.text_field :stor_address, class: "form-control col-sm-6" %>
         </div>
 
         <!--コメント-->
@@ -39,14 +39,13 @@
           <%= f.text_area :body, :size => "20x5", class: "form-control col-sm-6" %>
         </div>
       </div>
-
-      <div class="col">
-        <div class="row mt-4" style="display: flex">
-          <div class="col-md-8"></div>
-          <div class="col-md-2"><%= link_to "戻る", recruitment_path(recruitment_id), class: "btn btn-primary" %></div>
-          <div class="col-md-2"><%= f.submit "変更を保存", class: "btn btn-success" %></div>
-        </div>
-      </div>
     </div>
+
+    <div class="row justify-content-end mt-4">
+      <div class="col-3"><%= link_to "戻る", recruitment_path(@recruitment.id), class: "btn btn-primary" %></div>
+      <div class="col-3"><%= f.submit "変更を保存", class: "btn btn-success" %></div>
+      <div class="col-3"><%= link_to "投稿の削除", recruitment_path(@recruitment.id), method: :delete, class: 'btn btn-danger'  %></div>
+    </div>
+
   <% end %>
 </div>

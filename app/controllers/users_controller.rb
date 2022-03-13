@@ -19,17 +19,13 @@ class UsersController < ApplicationController
     end
   end
 
-  def unsubscribe
-    @user = User.find_by(name: params[:name])
-  end
-
-  def withdraw
-    @user = current_user
-    @user.update(is_deleted: true)
-    reset_session
-    flash[:notice] = "退会処理を実行いたしました"
-    redirect_to root_path
-  end
+  #def withdraw
+   # @user = current_user
+    #@user.update(is_deleted: true)
+    #reset_session
+    #flash[:notice] = "退会処理を実行いたしました"
+    #redirect_to root_path
+  #end
 
    private
 
