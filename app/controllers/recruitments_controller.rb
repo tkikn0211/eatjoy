@@ -5,12 +5,12 @@ class RecruitmentsController < ApplicationController
 
   def index
     @recruitment = Recruitment.all
-    @user = @user_image
-   
+    @user = User.find_by(params[:id])
   end
 
   def show
     @recruitment = Recruitment.find(params[:id])
+    @user = User.find_by(id: @recruitment.user_id)
   end
 
   def edit

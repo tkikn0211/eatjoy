@@ -35,9 +35,15 @@
       </table>
     </div>
   </div>
-   <div class="row justify-content-end  mt-4">
+  <div class="row justify-content-end  mt-4">
     <div class="col-4">
-      <%= link_to "編集", edit_recruitment_path(@recruitment.id), class: "btn btn-primary" %>
+      <% if @recruitment.user == current_user %>
+        <%= link_to "編集", edit_recruitment_path(@recruitment.id), class: "btn btn-primary" %>
+      <% end %>
+      
+      <% if current_user != @user %>
+        <%= link_to 'メッセージを送る', message_path(@user.id), class:"btn  btn-success chat-btn" %>
+      <% end %>
     </div>
-    </div>
+  </div>
 </div>

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :profiles, only: [:show]
   resources :notifications, only: [:index]
   resources :messages, only:[:index, :show, :create]
+  #get 'message/:id', to: 'messages#show', as: 'message'
 
 
 

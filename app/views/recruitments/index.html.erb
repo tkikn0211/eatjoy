@@ -4,6 +4,11 @@
 　　  <h4>募集投稿一覧</h4>
 　　</div>
   </div>
+  <div class="row justify-content-end">
+    <div class="col-md-2">
+      <%= link_to "新規投稿", new_recruitment_path, class: "btn btn-success" %>
+    </div>
+  </div>
 
   <div class="row mt-4">
     <div class="col-md-12 mx-auto">
@@ -19,8 +24,10 @@
         <tbody class="text-center">
           <% @recruitment.each do |recruitment| %>
             <tr>
-              <td><%= attachment_image_tag @user, :user_image, size:'250x200' %></td>
-              <td></td>
+              <td><%= attachment_image_tag @user, :user_image, size:'150x80' %></td>
+              <td>
+                <%= link_to recruitment.user.account_name, profile_path(@user.id) %>
+              </td>
               <td><%= attachment_image_tag recruitment, :store_image, size:'150x80' %></td>
               <td><%= recruitment.title %></td>
               <td><%= recruitment.store_name %></td>

@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-md-3 m-4 text-center">
+      <h4>メッセージルーム </h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-7">
+      <table class="message table">
+        <thead>
+          <tr>
+            <th style="text-alaign: left; font-size: 30px;"><%= current_user.account_name %></th>
+            <th style="text-alaign: right; font-size: 30px"><%= @user.account_name %></th>
+          </tr>
+        </thead>
+        <% @messages.each do |message| %>
+          <% if message.user_id == current_user.id %>
+          <tbody>
+            <tr>
+              <th>
+                <p style="text-align: left;"><%= message.message %></p>
+              </th>
+              <th></th>
+            </tr>
+          <% else %>
+            <tr>
+              <th></th>
+              <th>
+                <p style="text-align: right;"><%= message.message %></p>
+              </th>
+            </tr>
+          </tbody>
+          <% end %>
+        <% end %>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= form_with model: @message, local: false do |f| %>
+        <%= f.text_field :message %>
+        <%= f.hidden_field :room_id %>
+        <%= f.submit "送信", class: 'btn btn-sm btn-success chat-btn' %>
+      <% end %>
+    </div>
+  </div>
+</div>
