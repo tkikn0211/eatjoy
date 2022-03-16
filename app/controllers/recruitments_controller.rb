@@ -5,7 +5,6 @@ class RecruitmentsController < ApplicationController
 
   def index
     @recruitment = Recruitment.all
-    @user = User.find_by(params[:id])
   end
 
   def show

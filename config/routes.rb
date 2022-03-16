@@ -14,8 +14,7 @@ Rails.application.routes.draw do
   resources :profiles, only: [:show]
   resources :notifications, only: [:index]
   resources :messages, only:[:index, :show, :create]
-  #get 'message/:id', to: 'messages#show', as: 'message'
-
+  get "search" => "searches#search"
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
