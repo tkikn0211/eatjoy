@@ -1,5 +1,6 @@
 class Recruitment < ApplicationRecord
   belongs_to :user
+  has_many :favorites, dependent: :destroy
 
   #refile定義
   attachment :store_image
@@ -11,5 +12,9 @@ class Recruitment < ApplicationRecord
     else
       @recruitment = Recruitment.all
     end
+  end
+  
+  def favorited_by?(user)
+    favorites.exists?(user_id: user.id)
   end
 end

@@ -1,0 +1,11 @@
+<% if recruitment.favorited_by?(current_user) %><!-- ログインしているユーザーがファボしたかどうか -->
+    <%=link_to recruitment_favorites_path(recruitment), method: :delete, remote: true do %>
+      <i class="fas fa-heart" aria-hidden="true" style="color: red;"></i>
+      <%= recruitment.favorites.count %>
+    <% end %>
+<% else %>
+    <%= link_to recruitment_favorites_path(recruitment), method: :post, remote: true do %>
+      <i class="fas fa-heart" aria-hidden="true" ></i>
+      <%= recruitment.favorites.count %>
+    <% end %>
+<% end %>
