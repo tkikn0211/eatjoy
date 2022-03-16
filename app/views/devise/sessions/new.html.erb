@@ -34,8 +34,8 @@
       <% end %>
     </div>
   </div>
-  
-  
+
+
   <div class="row ml-md-4 my-4">
     <div class="col-md-3 pl-4  text-center">
       <h5>会員登録がお済でない方</h5>
@@ -43,5 +43,8 @@
   </div>
   <div class="col-md-6 m-4">
     <p class="offset-md-3"><%= link_to "こちら", new_user_registration_path %>から新規登録を行ってください。</p>
+  </div>
+  <div class="col-md-6 m-4">
+    <p class="offset-md-3"><%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %></p>
   </div>
 </div>
