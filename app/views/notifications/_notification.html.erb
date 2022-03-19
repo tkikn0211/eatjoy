@@ -1,0 +1,20 @@
+<% visitor = notification.visitor %>
+<% visited = notification.visited %>
+<div class="col-md-6 mx-auto">
+  <div class="form-inline">
+    <%= link_to "#{visitor.account_name}",user_path(visitor.id) %>
+    <%= "さんが" %>
+    <% case notification.action %>
+      <% when "favorite" then %>
+        <%= link_to "あなたの投稿", recruitment_path(notification.recruitment) %>
+        <%= "にいいねしました" %>
+      <% when "message" then %>
+        <%= link_to "あなたにメッセージ", message_path(visitor.id) %>
+        <%= "が届きました" %>
+    <% end %>
+    <div class="small text-muted text-right">
+     <%= time_ago_in_words(notification.create_at) %>
+    </div>
+   </div> 
+</div>
+

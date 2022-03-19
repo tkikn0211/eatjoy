@@ -1,4 +1,7 @@
 class Users::SessionsController < Devise::SessionsController
+  #いいね一覧機能
+  before_action :user_state, only: [:create]
+  
   #ゲストログイン
   def new_guest
     user = User.find_or_create_by!(email: 'guest@example.com') do |user|
@@ -14,4 +17,15 @@ class Users::SessionsController < Devise::SessionsController
     redirect_to root_path
   end
   
+
+  def user_state
+    @user = User.find_by(email: params[:user][:email])
+    return if !@user
+    if @user.valid_password?(params[:user][:password])
+      if @user.is_deleted == true
+        redirect_to new_user_registration_path
+      end
+    end
+  end
+
 end

@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  #いいね一覧
+  before_action :set_user, only: [:favorites]
 
   def show
     @user = User.find(params[:id])
@@ -19,6 +21,11 @@ class UsersController < ApplicationController
     end
   end
 
+  #退会機能
+  def unsubscribe
+    @user = User.find_by(account_name: params[:account_name])
+  end
+  
   def withdraw
     @user = current_user
     @user.update(is_deleted: true)
@@ -27,7 +34,19 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
-  private
+  #いいね一覧
+  def favorites
+    favorites = Favorite.where(user_id: @user.id).pluck(:recruitment_id)
+    @recruitments = Recruitment.find(favorites)
+
+  end
+
+ private
+  #いいね一覧
+  def set_user
+    @user = User.find(params[:id])
+  end
+
 
   def user_params
     params.require(:user).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :address, :email, :account_name, :user_image, :hobby, :body)

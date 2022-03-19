@@ -44,7 +44,7 @@ class RecruitmentsController < ApplicationController
 
   private
     def recruitment_params
-      params.require(:recruitment).permit(:title, :store_name, :store_address, :store_image, :body)
+      params.require(:recruitment).permit(:title, :store_name, :store_address, :store_image, :body, :genre)
     end
 
 end

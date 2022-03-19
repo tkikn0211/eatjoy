@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_14_102949) do
+ActiveRecord::Schema.define(version: 2022_03_19_041326) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
@@ -35,12 +35,17 @@ ActiveRecord::Schema.define(version: 2022_03_14_102949) do
 
   create_table "notifications", force: :cascade do |t|
     t.integer "message_id"
+    t.integer "recruitment_id"
     t.integer "visitor_id", null: false
     t.integer "visited_id", null: false
     t.string "action", default: "", null: false
     t.boolean "checked", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["message_id"], name: "index_notifications_on_message_id"
+    t.index ["recruitment_id"], name: "index_notifications_on_recruitment_id"
+    t.index ["visited_id"], name: "index_notifications_on_visited_id"
+    t.index ["visitor_id"], name: "index_notifications_on_visitor_id"
   end
 
   create_table "recruitments", force: :cascade do |t|
@@ -53,6 +58,7 @@ ActiveRecord::Schema.define(version: 2022_03_14_102949) do
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "genre"
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -82,9 +88,9 @@ ActiveRecord::Schema.define(version: 2022_03_14_102949) do
     t.string "user_image_id"
     t.string "hobby"
     t.text "body"
-    t.boolean "is_deleted", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "is_deleted", default: true, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

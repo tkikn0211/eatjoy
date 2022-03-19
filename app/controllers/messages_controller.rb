@@ -26,13 +26,14 @@ class MessagesController < ApplicationController
   def create
     @message = current_user.messages.new(message_params)
     @message.save
+    @message.create_notification_message!(current_user, @message.id)
   end
   
   
   private
   
   def message_params
-    params.require(:message).permit(:message, :room_id)
+    params.require(:message,).permit(:message, :room_id,)
   end
   
 end
