@@ -1,4 +1,5 @@
 class RecruitmentsController < ApplicationController
+
   def new
     @recruitment = Recruitment.new
   end
@@ -21,7 +22,9 @@ class RecruitmentsController < ApplicationController
     @recruitment.user_id = current_user.id
     if @recruitment.save
       redirect_to recruitment_path(@recruitment.id)
+      flash[:notice] = '投稿が完了しました'
     else
+      flash.now[:alert] = '投稿内容を入力してください。'
       render :new
     end
   end
@@ -46,5 +49,4 @@ class RecruitmentsController < ApplicationController
     def recruitment_params
       params.require(:recruitment).permit(:title, :store_name, :store_address, :store_image, :body, :genre)
     end
-
 end

@@ -1,7 +1,12 @@
 class Recruitment < ApplicationRecord
+  #アソシエーション
   belongs_to :user
   has_many :favorites, dependent: :destroy
   has_many :notifications, dependent: :destroy
+  
+  #バリデーション
+  validates :title, presence: true, length: { maximum: 15 }
+  validates :body, presence: true, length: { maximum: 50 }
 
   #refile定義
   attachment :store_image

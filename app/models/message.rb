@@ -4,6 +4,9 @@ class Message < ApplicationRecord
   belongs_to :room
   has_many :notifications, dependent: :destroy
   
+  #バリデーション
+  validates :message, presence: true, length: { maximum: 50 }
+  
   
   #通知機能
   def create_notification_message!(current_user, message_id)

@@ -1,14 +1,14 @@
 class MessagesController < ApplicationController
-  
+
   def index
      @user = User.find_by(params[:id])
   end
-  
+
   def show
     @user = User.find(params[:id])
     rooms = current_user.user_rooms.pluck(:room_id)
     user_rooms = UserRoom.find_by(user_id: @user.id, room_id: rooms)
-    
+
     if user_rooms.nil?
       @room = Room.new
       @room.save
@@ -17,23 +17,24 @@ class MessagesController < ApplicationController
     else
       @room = user_rooms.room
     end
-    
+
     @messages = @room.messages
     @message = Message.new(room_id: @room.id)
   end
-  
-  
+
+
   def create
     @message = current_user.messages.new(message_params)
     @message.save
+    flash[:notice] = 'メッセージを送信しました。'
     @message.create_notification_message!(current_user, @message.id)
   end
-  
-  
+
+
   private
-  
+
   def message_params
     params.require(:message,).permit(:message, :room_id,)
   end
-  
+
 end

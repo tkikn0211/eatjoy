@@ -7,3 +7,19 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import '~@fortawesome/fontawesome-free/scss/v4-shims';
 
 
+.Notification {
+ .notice {
+   background-color: #38AEF0;
+   color: #fff;
+   text-align: center;
+ }
+ .alert {
+   background-color: #F35500;
+   color: #fff;
+   text-align: center;
+ }
+}
+
+
+
+
