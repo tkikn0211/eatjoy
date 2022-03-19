@@ -2,7 +2,7 @@
 <% visited = notification.visited %>
 <div class="col-md-6 mx-auto">
   <div class="form-inline">
-    <%= link_to "#{visitor.account_name}",user_path(visitor.id) %>
+    <%= link_to "#{visitor.account_name}",user_path(visitor.id) unless visitor.nil? %>
     <%= "さんが" %>
     <% case notification.action %>
       <% when "favorite" then %>
@@ -13,8 +13,8 @@
         <%= "が届きました" %>
     <% end %>
     <div class="small text-muted text-right">
-     <%= time_ago_in_words(notification.create_at) %>
+     <%= time_ago_in_words(notification.created_at) %>
     </div>
-   </div> 
+   </div>
 </div>
 

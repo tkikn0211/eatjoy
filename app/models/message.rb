@@ -9,12 +9,13 @@ class Message < ApplicationRecord
   
   
   #通知機能
-  def create_notification_message!(current_user, message_id)
-    temp_ids = Message.select(:user_id).where(message_id: id).where.not(user_id: current_user.id).distinct
+  def create_notification_message!(current_user, message_id, visited_id)
+    #temp_ids = Message.select(:user_id).where(id: message_id).where.not(user_id: current_user.id).distinct
+    temp_ids = Message.select(:user_id).where(id: message_id).distinct
     temp_ids.each do |temp_id|
-      save_notification_message!(current_user, message_id, temp_id["user_id"])
+      save_notification_message!(current_user, message_id, visited_id)
     end
-    save_notification_message!(current_user, message_id, user_id) if temp_ids.blank?
+    save_notification_message!(current_user, message_id, visited_id) if temp_ids.blank?
   end
 
   def save_notification_message!(current_user, message_id, visited_id)
