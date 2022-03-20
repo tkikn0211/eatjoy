@@ -4,17 +4,19 @@
       <h4><%= @user.account_name %></h4>
     </div>
   </div>
-  
+
   <div class="row">
     <div class="col-9"></div>
       <div class="col-3">
-        <%= link_to"メッセージを送る", messages_path,class: "btn btn-success" %>
+        <% if current_user != @user %>
+          <%= link_to 'メッセージを送る', message_path(@user.id), class:"btn  btn-success chat-btn" %>
+        <% end %>
       </div>
   </div>
 
   <div class="row mt-4">
     <div class="col-md-4">
-      <%= attachment_image_tag @user, :user_image, size:'250x200' %>
+      <%= attachment_image_tag @user, :user_image, size:'250x200', fallback: "no_image.jpg" %>
     </div>
     <div class="col-md-7">
       <table class="table">
@@ -43,7 +45,7 @@
           <td><%= @user.body %></td>
         </tr>
       </table>
-      
+
     </div>
   </div>
 </div>

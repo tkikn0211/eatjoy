@@ -8,7 +8,7 @@
   <div class="row mt-4">
     <div class="col-4">
       <tr>
-        <td><%=  %></td><!--attachment_image_tag @recruitment, :store_image, size:'300x250'画像が重いためデプロイ時戻す-->
+        <td><%= attachment_image_tag @recruitment, :store_image, size:'300x250',fallback: "no_image2.png" %></td>
       </tr>
     </div>
     <div class="col-md-8 text-cenetr">

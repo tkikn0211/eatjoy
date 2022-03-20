@@ -1,15 +1,15 @@
 <% visitor = notification.visitor %>
 <% visited = notification.visited %>
 <div class="col-md-6 mx-auto">
-  <div class="form-inline">
-    <%= link_to "#{visitor.account_name}",user_path(visitor.id) unless visitor.nil? %>
+  <div class="form-inline border-bottom mb-3">
+    <%= link_to "#{visitor.account_name}",profile_path(visitor.id) unless visitor.nil? %>
     <%= "さんが" %>
     <% case notification.action %>
       <% when "favorite" then %>
         <%= link_to "あなたの投稿", recruitment_path(notification.recruitment) %>
         <%= "にいいねしました" %>
       <% when "message" then %>
-        <%= link_to "あなたにメッセージ", message_path(visitor.id) %>
+        <%= link_to "#{visitor.account_name}",profile_path(visitor.id) unless visitor.nil? %>
         <%= "が届きました" %>
     <% end %>
     <div class="small text-muted text-right">

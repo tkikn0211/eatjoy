@@ -28,11 +28,11 @@
         <tbody class="text-center">
           <% @recruitment.each do |recruitment| %>
             <tr>
-              <td><%= attachment_image_tag recruitment.user, :user_image, size:'150x80' %></td>
               <td>
-                <%= link_to recruitment.user.account_name, profile_path(recruitment.user.id) %>
+                <%= attachment_image_tag recruitment.user, :user_image, size:'150x80',fallback: "no_image.jpg" %>
               </td>
-              <td><%=  %></td><!--attachment_image_tag recruitment, :store_image, size:'150x80'画像が重い為デプロイ時に戻す-->
+              <td><%= link_to recruitment.user.account_name, profile_path(recruitment.user.id) %></td>
+              <td><%= attachment_image_tag recruitment, :store_image, size:'150x80', fallback: "no_image2.png" %></td>
               <td><%= recruitment.title %></td>
               <td><%= recruitment.store_name %></td>
               <td class=<%= "favorites_buttons"+ recruitment.id.to_s %>> <!--非同期処理-->

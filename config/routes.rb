@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   resources :genres, only: [:index]
   resources :profiles, only: [:show]
   resources :notifications, only: [:index]
-  resources :messages, only:[:index, :show, :create]
+  resources :messages, only:[:index, :show, :create, :destroy]
   resources :notifications, only: [:index]
   get "search" => "searches#search"
 

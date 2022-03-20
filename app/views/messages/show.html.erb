@@ -7,19 +7,14 @@
 
   <div class="row">
     <div class="col-7 mx-auto text-center">
-      <table class="message table">
-        <thead>
-          <tr>
-            <th style="text-alaign: left; font-size: 20px;"><%= current_user.account_name %></th>
-            <th style="text-alaign: right; font-size: 20px"><%= @user.account_name %></th>
-          </tr>
-        </thead>
+      <div class="message">
         <% @messages.each do |message| %>
           <% if message.user_id == current_user.id %>
           <tbody>
             <tr>
               <th>
                 <p style="text-align: left;"><%= message.message %></p>
+                <p style="text-align: left;"><%= link_to "削除", messages_path(@message.id), method: :delete, class: 'btn btn-danger btn-sm' %></p>
               </th>
               <th></th>
             </tr>
@@ -28,12 +23,15 @@
               <th></th>
               <th>
                 <p style="text-align: right;"><%= message.message %></p>
+                <% if @message.user == current_user %>
+                  <p style="text-align: right;"><%= link_to "削除", messages_path(@message.id), method: :delete, class: 'btn btn-danger btn-sm' %></p>
+                <% end %>
               </th>
             </tr>
           </tbody>
           <% end %>
         <% end %>
-      </table>
+      </div>
     </div>
   </div>
   <div class="row">

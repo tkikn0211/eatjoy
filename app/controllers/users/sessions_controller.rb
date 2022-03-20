@@ -1,7 +1,7 @@
 class Users::SessionsController < Devise::SessionsController
   #いいね一覧機能
   before_action :user_state, only: [:create]
-  
+
   #ゲストログイン
   def new_guest
     user = User.find_or_create_by!(email: 'guest@example.com') do |user|
@@ -14,9 +14,10 @@ class Users::SessionsController < Devise::SessionsController
       user.account_name = "ゲストユーザー"
     end
     sign_in user
+    flash[:notice] = "ログインに成功しました。"
     redirect_to root_path
   end
-  
+
 
   def user_state
     @user = User.find_by(email: params[:user][:email])

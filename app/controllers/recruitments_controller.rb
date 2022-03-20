@@ -33,6 +33,7 @@ class RecruitmentsController < ApplicationController
     @recruitment = Recruitment.find(params[:id])
     @recruitment.user_id = current_user.id
     if @recruitment.update(recruitment_params)
+      flash[:notice] = '投稿の編集が完了しました'
       redirect_to recruitments_path
     else
       render :edit
@@ -42,6 +43,7 @@ class RecruitmentsController < ApplicationController
   def destroy
     @recruitment = Recruitment.find(params[:id])
     @recruitment.destroy
+    flash.now[:alert] = '投稿を削除しました。'
     redirect_to recruitments_path
   end
 

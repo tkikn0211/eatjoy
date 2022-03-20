@@ -29,10 +29,15 @@ class MessagesController < ApplicationController
     @message = current_user.messages.new(create_message_params)
     visited_id = message_params[:visited_id]
     @message.save
-    flash[:notice] = 'メッセージを送信しました。'
     @message.create_notification_message!(current_user, @message.id, visited_id)
   end
 
+  def destroy
+    @message = Message.find(params[:id])
+    @message.destroy
+    flash.now[:alert] = '投稿を削除しました。'
+    redirect_to message_path
+  end
 
   private
 
