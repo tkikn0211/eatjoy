@@ -7,7 +7,6 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import '~@fortawesome/fontawesome-free/scss/v4-shims';
 
 
-
 .Notification {
  .notice {
    background-color: #38AEF0;
@@ -21,3 +20,11 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
  }
 }
 
+header{
+  background-color: #deb887 ;
+ }
+
+.title_name{
+  font-family: fantasy;
+  font-size:  60px;
+}

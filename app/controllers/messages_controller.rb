@@ -35,8 +35,7 @@ class MessagesController < ApplicationController
   def destroy
     @message = Message.find(params[:id])
     @message.destroy
-    flash.now[:alert] = '投稿を削除しました。'
-    redirect_to message_path
+    redirect_to message_path(@message_id)
   end
 
   private
