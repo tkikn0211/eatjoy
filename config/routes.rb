@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get "home_about"=>"homes#about"
   resources :users, only: [:show, :edit, :update] do
     collection do
+      get 'rooms'#DM一覧
       get 'unsubscribe'#退会機能ネストする
       patch 'withdraw'
     end
@@ -27,7 +28,7 @@ Rails.application.routes.draw do
   resources :genres, only: [:index]
   resources :profiles, only: [:show]
   resources :notifications, only: [:index]
-  resources :messages, only:[:index, :show, :create, :destroy]
+  resources :messages, only:[:show, :create, :destroy]
   resources :notifications, only: [:index]
   get "search" => "searches#search"
 

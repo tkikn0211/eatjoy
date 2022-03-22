@@ -1,8 +1,5 @@
 class MessagesController < ApplicationController
 
-  def index
-     @user = User.find_by(params[:id])
-  end
 
   def show
     @user = User.find(params[:id])
@@ -32,10 +29,11 @@ class MessagesController < ApplicationController
     @message.create_notification_message!(current_user, @message.id, visited_id)
   end
 
+
   def destroy
     @message = Message.find(params[:id])
     @message.destroy
-    redirect_to message_path(@message_id)
+    redirect_back(fallback_location: root_path)
   end
 
   private

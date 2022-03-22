@@ -20,7 +20,7 @@
               <% end %>
             </li>
             <li><%= link_to '募集投稿一覧',recruitments_path, class: 'btn btn-outline-dark mx-3 my-1' %> </li>
-            <li><%= link_to 'DM一覧',messages_path, class: 'btn btn-outline-dark mx-3 my-1' %> </li>
+            <li><%= link_to 'DM一覧',rooms_users_path, class: 'btn btn-outline-dark mx-3 my-1' %> </li>
             <li><%= link_to 'マイページ',user_path(current_user.id), class: 'btn btn-outline-dark mx-3 my-1' %> </li>
             <li><%= link_to 'ログアウト',destroy_user_session_path, method: :delete, class: 'btn btn-outline-dark mx-3 my-1' %> </li>
           <% else %><!--ログインされていない-->

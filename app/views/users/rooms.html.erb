@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row mt-3">
+　　<div class="col-md-3">
+　　  <h4>メッセージ一覧</h4>
+　　</div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-6 mx-auto text-center">
+      <table class="table">
+        <% @rooms.each do |room| %>
+        <tr>
+          <% partners = room.partner(current_user.id) %>
+          <% partners.each do | partner| %>
+            <td>
+             <%= attachment_image_tag partner, :user_image, size:'100x70',fallback: "no_image.jpg" %>
+             <%= partner.account_name %>
+             <%= link_to "メッセージ", message_path(partner.id) %>
+             </td>
+          <% end %>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

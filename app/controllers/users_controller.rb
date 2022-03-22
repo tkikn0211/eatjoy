@@ -40,6 +40,12 @@ class UsersController < ApplicationController
     @recruitments = Recruitment.find(favorites)
 
   end
+  
+  #DM一覧
+  def rooms
+    @rooms = current_user.rooms
+  end
+  
 
  private
   #いいね一覧

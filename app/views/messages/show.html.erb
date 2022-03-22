@@ -14,7 +14,7 @@
             <tr>
               <th>
                 <p style="text-align: left;"><%= message.message %></p>
-                <p style="text-align: left;"><%= link_to "削除", @message_path, method: :delete, class: 'btn btn-danger btn-sm' %></p>
+                <p style="text-align: left;"><%= link_to "削除", message_path(message.id), method: :delete, class: 'btn btn-danger btn-sm' %></p>
               </th>
               <th></th>
             </tr>
@@ -23,9 +23,6 @@
               <th></th>
               <th>
                 <p style="text-align: right;"><%= message.message %></p>
-                <% if @message.user == current_user %>
-                  <p style="text-align: right;"></p>
-                <% end %>
               </th>
             </tr>
           </tbody>

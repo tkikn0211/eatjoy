@@ -11,6 +11,9 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :favorites, dependent: :destroy
   
+  #DM一覧user_rooms通して2人のユーザーをroomsに格納
+  has_many :rooms, through: :user_rooms
+  
   #自分からの通知
   has_many :active_notifications, class_name: "Notification", foreign_key: "visitor_id", dependent: :destroy
   #相手からの
