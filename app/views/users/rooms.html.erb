@@ -11,11 +11,9 @@
         <tr>
           <% partners = room.partner(current_user.id) %>
           <% partners.each do | partner| %>
-            <td>
-             <%= attachment_image_tag partner, :user_image, size:'100x70',fallback: "no_image.jpg" %>
-             <%= partner.account_name %>
-             <%= link_to "メッセージ", message_path(partner.id) %>
-             </td>
+            <td><%= attachment_image_tag partner, :user_image, size:'80x50',fallback: "no_image.jpg" %></td>
+            <td><%= partner.account_name %></td>
+            <td><%= link_to "メッセージ", message_path(partner.id),class: 'btn btn-primary btn-sm' %></td>
           <% end %>
           </tr>
         <% end %>

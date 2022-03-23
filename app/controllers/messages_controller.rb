@@ -33,6 +33,7 @@ class MessagesController < ApplicationController
   def destroy
     @message = Message.find(params[:id])
     @message.destroy
+    #直前のページにリダイレクト
     redirect_back(fallback_location: root_path)
   end
 
