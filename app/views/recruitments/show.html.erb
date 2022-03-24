@@ -6,12 +6,10 @@
   </div>
 
   <div class="row mt-4">
-    <div class="col-4">
-      <tr>
-        <td><%= attachment_image_tag @recruitment, :store_image, size:'300x250',fallback: "no_image2.png" %></td>
-      </tr>
+    <div class="col-md-4">
+      <td><%= attachment_image_tag @recruitment, :store_image, size:'250x200',fallback: "no_image2.png" %></td>
     </div>
-    <div class="col-md-8 text-cenetr">
+    <div class="col-md-7">
       <table class="table">
         <tr>
           <td>タイトル</td>
