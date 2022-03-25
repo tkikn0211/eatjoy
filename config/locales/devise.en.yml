@@ -4,6 +4,12 @@ ja:
   activerecord:
     attributes:
       user:
+        last_name: 姓
+        first_name: 名
+        last_name_kana: セイ
+        first_name_kana: メイ
+        address: 住所
+        account_name: アカウント名
         confirmation_sent_at: パスワード確認送信時刻
         confirmation_token: パスワード確認用トークン
         confirmed_at: パスワード確認時刻
@@ -143,3 +149,4 @@ ja:
       not_saved:
         one: エラーが発生したため %{resource} は保存されませんでした。
         other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
+ 

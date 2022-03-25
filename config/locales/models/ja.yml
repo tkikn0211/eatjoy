@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    models:
+      recruitment: 募集投稿
+    attributes:
+      recruitment:
+        title: タイトル
+        body: コメント
+        store_name: 店舗名
+        store_address: 店舗住所
+        genre: ジャンル

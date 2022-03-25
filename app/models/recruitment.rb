@@ -6,6 +6,9 @@ class Recruitment < ApplicationRecord
 
   validates :title, presence: true, length: { maximum: 15 }
   validates :body, presence: true, length: { maximum: 100 }
+  validates :store_name, presence: true, length: { maximum: 15 }
+  validates :store_address, presence: true, length: { maximum: 50 }
+  validates :genre, presence: true, length: { maximum: 15 }
 
   attachment :store_image
 

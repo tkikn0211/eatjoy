@@ -1,4 +1,6 @@
 class RecruitmentsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def new
     @recruitment = Recruitment.new
@@ -50,5 +52,12 @@ class RecruitmentsController < ApplicationController
   private
     def recruitment_params
       params.require(:recruitment).permit(:title, :store_name, :store_address, :store_image, :body, :genre)
+    end
+
+    def ensure_correct_user
+      @recruitment = Recruitment.find(params[:id])
+      unless @recruitment.user == current_user
+        redirect_to recruitments_path
+      end
     end
 end
