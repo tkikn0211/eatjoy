@@ -12,6 +12,7 @@ class Users::SessionsController < Devise::SessionsController
       user.last_name_kana = "ゲスト"
       user.first_name_kana = "サマ"
       user.account_name = "ゲストユーザー"
+      user.address = "東京都"
     end
     sign_in user
     flash[:notice] = "ログインに成功しました。"
