@@ -45,7 +45,6 @@ class RecruitmentsController < ApplicationController
   def destroy
     @recruitment = Recruitment.find(params[:id])
     @recruitment.destroy
-    flash.now[:alert] = '投稿を削除しました。'
     redirect_to recruitments_path
   end
 
