@@ -6,7 +6,7 @@ FactoryBot.define do
     first_name_kana { "テスト" }
     account_name { "test" }
     address { "東京都" }
-    email { Faker::Internet.email }
+    email { "test@example.com" }
     password { "password" }
     password_confirmation { "password" }
   end

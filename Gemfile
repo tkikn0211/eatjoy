@@ -36,7 +36,10 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0.0'
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'capybara'
+  gem 'selenium-webdriver'
+  
+  gem 'capybara', '>= 2.15'
+  gem 'webdrivers'
 
 end
 
@@ -53,13 +56,15 @@ group :development do
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec'
+
 end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'selenium-webdriver'
+
   # Easy installation and use of web drivers to run system tests with browsersrails
-  gem 'webdrivers'
+  # gem 'webdrivers'
+  
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

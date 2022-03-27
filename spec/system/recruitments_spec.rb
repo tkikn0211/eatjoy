@@ -1,5 +1,5 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-RSpec.describe "Recruitments", type: :system do
+# RSpec.describe "Recruitments", type: :system do
   
-end
+# end
