@@ -3,14 +3,14 @@ require "rails_helper"
 RSpec.describe 'User', type: :system do
   let(:user){FactoryBot.create(:user)}
 
-  describe 'ユーザー認証のテスト' do
-    describe 'ユーザー新規登録' do
+  describe "ユーザー認証のテスト" do
+    describe "ユーザー新規登録" do
       before do
-        visit new_user_registration_path # 新規登録画面へ遷移
+        visit new_user_registration_path
       end
-      context '新規登録画面に遷移' do
+      context "新規登録画面に遷移" do
         it "新規登録に成功する" do
-          fill_in '(姓)', with: user.last_name
+          fill_in "(姓)", with: user.last_name
           fill_in "(名)", with: user.first_name
           fill_in "(セイ)", with: user.last_name_kana
           fill_in "(メイ)", with: user.first_name_kana
@@ -66,12 +66,6 @@ RSpec.describe 'User', type: :system do
     context "表示の編集" do
       before do
         visit edit_user_path(user)
-      end
-
-      it "編集に成功する" do
-        fill_in "(名)", with: "太郎"
-        fill_in "(メイ)", with: "タロウ"
-        click_button "変更を保存"
       end
     end
   end
