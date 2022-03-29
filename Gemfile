@@ -79,4 +79,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
     gem 'mysql2'
   end
   gem 'rails-i18n', '~> 6.0.0'
-

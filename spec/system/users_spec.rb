@@ -10,15 +10,15 @@ RSpec.describe 'User', type: :system do
       end
       context "新規登録画面に遷移" do
         it "新規登録に成功する" do
-          fill_in "(姓)", with: user.last_name
-          fill_in "(名)", with: user.first_name
-          fill_in "(セイ)", with: user.last_name_kana
-          fill_in "(メイ)", with: user.first_name_kana
-          fill_in "アカウント名", with: user.account_name
-          fill_in "メールアドレス", with: user.email
-          fill_in "住所", with: user.email
-          fill_in "user_password", with: user.password
-          fill_in "user_password", with: user.password_confirmation
+          fill_in "user[last_name]", with: user.last_name
+          fill_in "user[first_name]", with: user.first_name
+          fill_in "user[last_name_kana]", with: user.last_name_kana
+          fill_in "user[first_name_kana]", with: user.first_name_kana
+          fill_in "user[account_name]", with: user.account_name
+          fill_in "user[email]", with: user.email
+          fill_in "user[address]", with: user.email
+          fill_in "user[password]", with: user.password
+          fill_in "user[password]", with: user.password_confirmation
           click_button "新規登録"
         end
         it '新規登録に失敗する' do
