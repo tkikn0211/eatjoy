@@ -57,17 +57,4 @@ RSpec.describe 'User', type: :system do
     end
   end
 
-  describe "編集のテスト" do
-    context "編集画面へ遷移" do
-      it "遷移ができる" do
-        visit edit_user_path(user)
-      end
-    end
-    context "表示の編集" do
-      before do
-        visit edit_user_path(user)
-      end
-    end
-  end
-
 end

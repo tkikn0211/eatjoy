@@ -7,7 +7,7 @@ class RecruitmentsController < ApplicationController
   end
 
   def index
-    @recruitment = Recruitment.all
+    @recruitment = Recruitment.all.page(params[:page]).per(5)
   end
 
   def show

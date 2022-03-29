@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   root "homes#top"
   get "home_about"=>"homes#about"
-  resources :users, only: [:show, :edit, :update] do
+  resources :users, only: [:show, :edit, :update, :index] do
     collection do
       get 'rooms'#DM一覧
       get 'unsubscribe'#退会機能ネストする

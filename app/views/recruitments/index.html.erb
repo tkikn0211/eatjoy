@@ -16,12 +16,12 @@
   <div class="row mt-4">
     <div class="col-md-12 mx-auto">
       <table class="table">
-        <thead class="bg-light text-center">
+        <thead class="text-center">
           <th class="col-2">ユーザー画像</th>
           <th class="col-2">アカウント名</th>
           <th class="col-2">店舗画像</th>
-          <th class="col-2">タイトル</th>
           <th class="col-2">店舗名</th>
+          <th class="col-2">タイトル</th>
           <th></th>
           <th></th>
         </thead>
@@ -31,8 +31,8 @@
               <td><%= attachment_image_tag recruitment.user, :user_image, size:'150x80',fallback: "no_image.jpg" %></td>
               <td><%= link_to recruitment.user.account_name, profile_path(recruitment.user.id) %></td>
               <td><%= attachment_image_tag recruitment, :store_image, size:'150x80', fallback: "no_image2.png" %></td>
-              <td><%= recruitment.title %></td>
               <td><%= recruitment.store_name %></td>
+              <td><%= recruitment.title %></td>
               <td class=<%= "favorites_buttons"+ recruitment.id.to_s %>> <!--非同期処理-->
                 <%= render "favorites/favorites", recruitment: recruitment %>
               </td>
@@ -44,3 +44,4 @@
     </div>
   </div>
 </div>
+<div class="d-flex justify-content-center"><%= paginate @recruitment %></div>

@@ -35,21 +35,5 @@ RSpec.describe "Recruitments", type: :system do
         end
       end
     end
-    
-    describe "編集のテスト" do
-      context "各画面への遷移の確認" do
-        before do
-          visit recruitments_path 
-        end
-        
-        it "投稿詳細画面への遷移ができる" do
-          click_on "詳細"
-        end
-        
-       
-      end
-    end
-    
-    
   end
 end

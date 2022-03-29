@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
   before_action :ensure_correct_user, only: [:update, :edit, :destroy, :show, :favorites ]
+  before_action :authenticate_user!, except: [:index]
   #いいね一覧
   before_action :set_user, only: [:favorites]
+
+  def index
+    redirect_back(fallback_location: root_path)
+  end
 
   def show
     @user = User.find(params[:id])
