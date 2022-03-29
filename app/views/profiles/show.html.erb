@@ -1,7 +1,7 @@
 <div class='container'>
   <div class='row mt-3'>
     <div class='col-md-3 m-4 text-center'>
-      <h4><%= @user.account_name %></h4>
+      <h4>プロフィール</h4>
     </div>
   </div>
 
@@ -16,18 +16,13 @@
 
   <div class="row mt-4">
     <div class="col-md-4">
-      <%= attachment_image_tag @user, :user_image, size:'250x200', fallback: "no_image.jpg" %>
+      <%= attachment_image_tag @user, :user_image, size:'230x200', fallback: "no_image.jpg" %>
     </div>
-    <div class="col-md-7">
+    <div class="col-md-8">
       <table class="table">
         <tr>
           <td>名前</td>
-          <td><%= @user.last_name %><%= @user.first_name %></td>
-        </tr>
-
-        <tr>
-          <td>フリガナ</td>
-          <td><%= @user.last_name_kana %><%= @user.first_name_kana %></td>
+          <td><%= @user.account_name %></td>
         </tr>
 
         <tr>
