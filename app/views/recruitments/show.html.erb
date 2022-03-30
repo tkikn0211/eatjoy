@@ -1,6 +1,6 @@
-<div class='container'>
-  <div class='row mt-3'>
-    <div class='col-md-3 m-4 text-center'>
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-md-3 m-4 text-center">
       <h4>投稿詳細</h4>
     </div>
   </div>
@@ -9,7 +9,7 @@
     <div class="col-md-4">
       <td><%= attachment_image_tag @recruitment, :store_image, size:'250x200',fallback: "no_image2.png" %></td>
     </div>
-    <div class="col-md-7">
+    <div class="col-md-8">
       <table class="table">
         <tr>
           <td>タイトル</td>
@@ -32,8 +32,12 @@
         </tr>
 
         <tr>
-          <td>コメント</td>
+          <td width="20%">コメント</td>
           <td><%= @recruitment.body %></td>
+        </tr>
+        <tr>
+          <td>投稿日時</td>
+          <td><%= @recruitment.created_at.strftime('%Y/%m/%d %H:%M') %></td>
         </tr>
       </table>
     </div>
@@ -49,7 +53,7 @@
     </div>
     <div class="col-2">
       <% if current_user != @user %>
-        <%= link_to 'メッセージを送る', message_path(@user.id), class:"btn  btn-success chat-btn" %>
+        <%= link_to "メッセージを送る", message_path(@user.id), class:"btn  btn-success chat-btn" %>
       <% end %>
     </div>
     </div>

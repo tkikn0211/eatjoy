@@ -16,7 +16,7 @@
 
   <div class="row mt-4">
     <div class="col-md-4">
-      <%= attachment_image_tag @user, :user_image, size:'230x200', fallback: "no_image.jpg" %>
+      <%= attachment_image_tag @user, :user_image, size:'250x200', fallback: "no_image.jpg" %>
     </div>
     <div class="col-md-8">
       <table class="table">
@@ -36,7 +36,7 @@
         </tr>
 
         <tr>
-          <td>自己紹介</td>
+          <td width="20%">自己紹介</td>
           <td><%= @user.body %></td>
         </tr>
       </table>
