@@ -36,14 +36,28 @@
 
 行きたいお店の同行者を探したいとき
 
+
 ## 設計書
 
 
-### ◯チャレンジ要素一覧(https://docs.google.com/spreadsheets/d/11SLBhHt8oxADIJqTGUA4zvSv_3hLWgNY3S92i7YS1L8/edit?usp=sharing)
+### チャレンジ要素一覧
 
-### ◯ER図(https://drive.google.com/file/d/1vfYMP5N_0UEpMt2GvOmowDkbS2mvk9Pq/view?usp=sharing)
+https://docs.google.com/spreadsheets/d/11SLBhHt8oxADIJqTGUA4zvSv_3hLWgNY3S92i7YS1L8/edit?usp=sharing
 
 
+### ER図
+
+https://drive.google.com/file/d/1vfYMP5N_0UEpMt2GvOmowDkbS2mvk9Pq/view?usp=sharing
+
+
+### テーブル定義書
+
+https://docs.google.com/spreadsheets/d/1INjOjUJjv3ThYe9TmJ51N4PIOoALNvU5k4qqp1f_hPQ/edit?usp=sharing
+
+
+### 画面遷移図
+
+https://drive.google.com/file/d/1gDTUUuQmG_6QywIvBH62g5WEhqIPYySn/view?usp=sharing
 
 ## 開発環境
 
