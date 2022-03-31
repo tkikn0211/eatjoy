@@ -16,6 +16,8 @@ class Recruitment < ApplicationRecord
   def self.looks(search, word)
     if search == "partial"
       @recruitment = Recruitment.where(["title like? OR genre like?", "%#{word}%", "%#{word}%"])
+    elsif search == "perfect"
+      @recruitment = Recruitment.where(["title like? OR genre like?", "#{word}", "#{word}"])
     else
       @recruitment = Recruitment.all
     end
