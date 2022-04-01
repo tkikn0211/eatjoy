@@ -24,9 +24,9 @@ class RecruitmentsController < ApplicationController
     @recruitment.user_id = current_user.id
     if @recruitment.save
       redirect_to recruitment_path(@recruitment.id)
-      flash[:notice] = '投稿が完了しました'
+      flash[:notice] = "投稿が完了しました"
     else
-      flash.now[:alert] = '投稿内容を入力してください。'
+      flash.now[:alert] = "投稿内容を入力してください。"
       render :new
     end
   end
@@ -35,7 +35,7 @@ class RecruitmentsController < ApplicationController
     @recruitment = Recruitment.find(params[:id])
     @recruitment.user_id = current_user.id
     if @recruitment.update(recruitment_params)
-      flash[:notice] = '投稿の編集が完了しました'
+      flash[:notice] = "投稿の編集が完了しました"
       redirect_to recruitments_path
     else
       render :edit

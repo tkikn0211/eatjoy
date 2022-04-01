@@ -19,15 +19,15 @@
                 <% end %>
               <% end %>
             </li>
-            <li><%= link_to '募集投稿一覧',recruitments_path, class: 'btn btn-outline-dark mx-3 my-1' %> </li>
-            <li><%= link_to 'DM一覧',rooms_users_path, class: 'btn btn-outline-dark mx-3 my-1' %> </li>
-            <li><%= link_to 'マイページ',user_path(current_user.id), class: 'btn btn-outline-dark mx-3 my-1' %> </li>
-            <li><%= link_to 'ログアウト',destroy_user_session_path, method: :delete, class: 'btn btn-outline-dark mx-3 my-1' %> </li>
+            <li><%= link_to "募集投稿一覧",recruitments_path, class: "btn btn-outline-dark mx-3 my-1" %> </li>
+            <li><%= link_to "DM一覧",rooms_users_path, class: "btn btn-outline-dark mx-3 my-1" %> </li>
+            <li><%= link_to "マイページ",user_path(current_user.id), class: "btn btn-outline-dark mx-3 my-1" %> </li>
+            <li><%= link_to "ログアウト",destroy_user_session_path, method: :delete, class: "btn btn-outline-dark mx-3 my-1" %> </li>
           <% else %><!--ログインされていない-->
-            <li><%= link_to 'About', home_about_path, class: 'btn btn-outline-dark mx-3 my-1'%>
-            <li><%= link_to '募集投稿一覧',recruitments_path, class: 'btn btn-outline-dark mx-3 my-1'%></li>
-            <li><%= link_to '新規登録',new_user_registration_path, class: 'btn btn-outline-dark mx-3 my-1'%></li>
-            <li><%= link_to 'ログイン',new_user_session_path, class: 'btn btn-outline-dark mx-3 my-1'%></li>
+            <li><%= link_to "About", home_about_path, class: "btn btn-outline-dark mx-3 my-1" %>
+            <li><%= link_to "募集投稿一覧",recruitments_path, class: "btn btn-outline-dark mx-3 my-12" %></li>
+            <li><%= link_to "新規登録",new_user_registration_path, class: "btn btn-outline-dark mx-3 my-1" %></li>
+            <li><%= link_to "ログイン",new_user_session_path, class: "btn btn-outline-dark mx-3 my-1" %></li>
           <% end %>
         </ul>
       </div>
