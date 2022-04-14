@@ -42,14 +42,13 @@
 ### AWS構成図
 ![AWS構成図](https://user-images.githubusercontent.com/95737638/163415427-d89ed48f-fceb-4c4a-9936-f27d6740dd03.jpg)
 
+### ER図
+![eatjoy_ER図](https://user-images.githubusercontent.com/95737638/163416260-096f879c-42dd-4afe-b6c0-5733dae6f33c.jpg)
+
+
 ### チャレンジ要素一覧
 
 https://docs.google.com/spreadsheets/d/11SLBhHt8oxADIJqTGUA4zvSv_3hLWgNY3S92i7YS1L8/edit?usp=sharing
-
-
-### ER図
-
-https://drive.google.com/file/d/1vfYMP5N_0UEpMt2GvOmowDkbS2mvk9Pq/view?usp=sharing
 
 
 ### テーブル定義書
