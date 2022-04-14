@@ -39,6 +39,8 @@
 
 ## 設計書
 
+### AWS構成図
+![AWS構成図](https://user-images.githubusercontent.com/95737638/163415427-d89ed48f-fceb-4c4a-9936-f27d6740dd03.jpg)
 
 ### チャレンジ要素一覧
 
