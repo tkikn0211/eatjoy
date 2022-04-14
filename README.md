@@ -40,7 +40,7 @@
 ## 設計書
 
 ### AWS構成図
-![AWS構成図](https://user-images.githubusercontent.com/95737638/163415427-d89ed48f-fceb-4c4a-9936-f27d6740dd03.jpg)
+![AWS構成図](https://user-images.githubusercontent.com/95737638/163419468-90d6e358-d858-46af-9d22-3af034f8f378.jpg)
 
 ### ER図
 ![eatjoy_ER図](https://user-images.githubusercontent.com/95737638/163416260-096f879c-42dd-4afe-b6c0-5733dae6f33c.jpg)
