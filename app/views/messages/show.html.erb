@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row mt-3">
-    <div class="col-md-3 m-4 text-center">
-      <h4>メッセージルーム </h4>
+    <div class="col-md-12 m-4 text-center">
+      <h4><%= @user.account_name %>さんとのメッセージ</h4>
     </div>
   </div>
 
@@ -14,7 +14,9 @@
             <tr>
               <th>
                 <p style="text-align: left;"><%= message.message %></p>
-                <p style="text-align: left;"><%= link_to "削除", message_path(message.id), method: :delete, class: "btn btn-danger btn-sm" %></p>
+                <p style="text-align: left;">
+                  <%= link_to "削除", message_path(message.id), method: :delete, class: "btn btn-danger btn-sm" %>
+                </p>
               </th>
               <th></th>
             </tr>
