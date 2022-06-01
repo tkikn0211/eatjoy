@@ -4,6 +4,7 @@
   <div class="form-inline border-bottom mb-3">
     <%= link_to "#{visitor.account_name}",profile_path(visitor.id) unless visitor.nil? %>
     <%= "さんが" %>
+    <!--処理の分岐-->
     <% case notification.action %>
       <% when "favorite" then %>
         <%= link_to "あなたの投稿", recruitment_path(notification.recruitment) %>

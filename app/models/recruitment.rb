@@ -29,7 +29,9 @@ class Recruitment < ApplicationRecord
 
   #通知機能いいね
   def create_notification_favorite!(current_user)
+    #すでにお気に入りされているか検索
     temp = Notification.where(["visitor_id = ? and visited_id = ? and recruitment_id = ? and action = ? ", current_user.id, user_id, id, "favorite"])
+    #お気に入りされてない場合のみ、通知レコードを作成
     if temp.blank?
       notification = current_user.active_notifications.new(
         recruitment_id: id,

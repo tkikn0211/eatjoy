@@ -6,3 +6,4 @@ class NotificationsController < ApplicationController
     end
   end
 end
+#未確認の通知レコードだけ取り出したあと、「未確認→確認済」になるように更新をする。
